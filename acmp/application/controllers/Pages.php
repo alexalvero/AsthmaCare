@@ -100,5 +100,80 @@
             
             redirect(base_url().'login');
         }
+
+
+        public function forgotpass(){
+
+
+
+
+
+            $this->load->view('templates/pages/header');
+            $this->load->view('pages/forgotpass', $data);
+            $this->load->view('templates/pages/footer');
+
+        }
+
+        public function sendpassword(){
+            $email = $this->input->post('email');
+
+           $result = $this->user_model->forgot($email);
+
+            
+
+            $this->load->library('phpmailer_lib');
+
+                $mail = $this->phpmailer_lib->load();
+                
+                
+                
+                
+                // SMTP Configuration
+        
+                $mail->IsSMTP();
+                $mail->Host = 'ssl://smtp.gmail.com';
+                $mail->SMTPAuth = true;
+                $mail->Username = 'acmp.ust@gmail.com';
+                $mail->Password = 'admin@acmp';
+                $mail->SMTPSecure = 'tls';
+                $mail->Port = 465;
+        
+                $mail->setFrom('acmp.ust@gmail.com', 'Asthma Care');
+                $mail->addReplyto('acmp.ust@gmail.com', "Asthma Care");
+                
+                //Email Recipient
+                $mail->addAddress($email);
+        
+                //Email Subject
+                $mail->Subject = '<do-not-reply> Password Recovery';
+        
+                //Setting Email format to HTML
+                $mail->isHTML(true);
+
+                foreach($result as $row):
+
+                    $firstname = $row['firstname'];
+                    $lastname = $row['lastname'];
+                    $username = $row['username'];
+                    $password = $row['password'];
+
+                $mailContent="<h1 class='uppercase'>Good Day $firstname $lastname!</h1>
+                        <h4> Password Recovery </h4>
+                            <h5>Your Username is : $username</h5>
+                            <h5>Your Username is : $password</h5>
+                        <h6>You may now Login to Your Account using your Credentials!</h6>
+                ";
+                endforeach;
+        
+                $mail->Body = $mailContent;
+        
+                if(!$mail->send()){
+                    echo "Mailer Error ". $mail->ErrorInfo;
+                }
+                else{
+                    echo "Message Sent";
+                }
+            redirect(base_url()."login");
+        }
     }//end Class
   

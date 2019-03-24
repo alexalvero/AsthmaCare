@@ -179,5 +179,19 @@
             return $this->db->update('users' , $data);
         }
 
+        public function email_exists($email){
+            
+
+        $sql = "SELECT email from users WHERE email = '{$email}' LIMIT 1";
+        $result = $this->db->query($sql);
+        $row = $result->row();
+
+        return($result->num_rows() === 1 && $row->email);
+        }
+
+        public function forgot($email){
+            $query = $this->db->get_where('users', array('email' => $email));
+            return $query->result_array();
+        }
        
     }//end MODEL

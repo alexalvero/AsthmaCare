@@ -21,7 +21,9 @@
                               <input type="password" name="password" id="password"  class="form-control" placeholder="Enter Password">
                               <span class="text-danger"><?php echo form_error('password');?></span>
                            </div>
-                           <div class="col-md-12 text-center ">
+                           
+                           <div class="col-md-12 text-center">
+                           <a href="<?php echo base_url()."forgotpass"?>" class="text-warning">Forgot Password?</a>
                               <button type="submit" name='insert' value='login' class=" btn btn-block mybtn btn-warning tx-tfm text-light">Login</button>
                               <?php
                               echo $this->session->flashdata('error');
