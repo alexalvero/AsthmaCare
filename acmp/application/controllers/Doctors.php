@@ -53,6 +53,51 @@
             $this->load->view('templates/doctors/footer-doctor');
              } //end if
              else{
+                $this->load->library('phpmailer_lib');
+
+                $mail = $this->phpmailer_lib->load();
+                
+                $firstname = $this->input->post('firstname');
+                $lastname = $this->input->post('lastname');
+                $username = $this->input->post('username');
+                
+                
+                // SMTP Configuration
+        
+                $mail->IsSMTP();
+                $mail->Host = 'ssl://smtp.gmail.com';
+                $mail->SMTPAuth = true;
+                $mail->Username = 'acmp.ust@gmail.com';
+                $mail->Password = 'admin@acmp';
+                $mail->SMTPSecure = 'tls';
+                $mail->Port = 465;
+        
+                $mail->setFrom('acmp.ust@gmail.com', 'Asthma Care');
+                $mail->addReplyto('acmp.ust@gmail.com', "Asthma Care");
+                
+                //Email Recipient
+                $mail->addAddress($this->input->post('email'));
+        
+                //Email Subject
+                $mail->Subject = 'Welcome to Asthma Care!';
+        
+                //Setting Email format to HTML
+                $mail->isHTML(true);
+        
+                $mailContent="<h1 class='uppercase'>Good Day $firstname $lastname!</h1>
+                        <h4> Welcome to Asthma Care $username! </h4>
+    
+                        <h6>You may now Login to Your Account using your Credentials!</h6>
+                ";
+        
+                $mail->Body = $mailContent;
+        
+                if(!$mail->send()){
+                    echo "Mailer Error ". $mail->ErrorInfo;
+                }
+                else{
+                    echo "Message Sent";
+                }
                 $this->user_model->create_patient();
                 redirect(base_url().doctors);
                 
@@ -239,6 +284,45 @@
 
                 $this->load->view('doctors/viewAP', $data);
             }
+
+        }
+
+        public function archiveAP(){
+
+            $this->action_model->archiveAP();
+            redirect(base_url()."doctors/viewAP");
+        }
+
+        public function history(){
+
+            $username = $this->session->userdata('username');
+            $data['action'] = $this->action_model->history($username);     
+
+            $this->load->view('templates/doctors/header-doctor');
+            $this->load->view('doctors/history', $data);
+            $this->load->view('templates/doctors/footer-doctor');
+        }
+
+        public function print(){
+
+            $id = $this->input->post('id');
+            $action = $this->action_model->print($id);
+            $data['action'] = $this->action_model->print($id);
+
+            // print_r($action);
+            $this->load->view('doctors/print' , $data);
+            $this->load->view('templates/doctors/footer-doctor');
+        }
+
+        public function feedback(){
+
+            $username = $this->session->userdata('username');
+            $data['feed'] = $this->feedback_model->getfeedback($username);
+
+
+            $this->load->view('templates/doctors/header-doctor');
+            $this->load->view('doctors/feedback', $data);
+            $this->load->view('templates/doctors/footer-doctor');
 
         }
     }

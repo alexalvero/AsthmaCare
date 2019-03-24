@@ -17,11 +17,11 @@
       <tr>
         <td><?php echo $user['id']?></td>
         <td class='uppercase'><?php echo $user['firstname']?> <?php echo $user['lastname']?></td>
-        <td><button class="btn btn-success" data-target="#<?php echo $user['username']?>" data-toggle='modal'>View Patient</button></td>
+        <td><button class="btn btn-success" data-target="#modal<?php echo $user['id']?>" data-toggle='modal'>View Patient</button></td>
         
 
                 <!-- Modal -->
-<div class="modal fade" id='<?php echo $user['username']?>' tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id='modal<?php echo $user['id']?>' tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">

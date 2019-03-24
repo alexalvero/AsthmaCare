@@ -66,6 +66,7 @@
                             <div class="form-group" style='block'>
                         <input type="text" style="display: none" name='created_by' value='<?= $username ?>'>
                             </div>
+                            <input type="hidden" name="status" value="active">
          <button class="btn btn-warning">Submit</button>
          </div>
         </div>

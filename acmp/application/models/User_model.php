@@ -56,7 +56,22 @@
         }//end get_doctor
         public function get_patients($username){
             
-            $query = $this->db->get_where('users', array('created_by' => $username, 'roles' => 'patient' ) );
+            $query = $this->db->get_where('users', array('created_by' => $username, 'roles' => 'patient', 'status' => 'active' ) );
+            return $query->result_array();
+
+            if($query->num_rows() > 0){
+                
+                return true;
+            }
+            else{
+                
+                return false;
+            }
+        }//end get_patiens
+
+        public function get_patients2($username){
+            
+            $query = $this->db->get_where('users', array('created_by' => $username, 'roles' => 'patient') );
             return $query->result_array();
 
             if($query->num_rows() > 0){
@@ -100,7 +115,8 @@
                 'username' => $this->input->post('username'),
                 'password' => $this->input->post('password'),
                 'roles' => $this->input->post('roles'),
-                'created_by' => $this->input->post('created_by')
+                'created_by' => $this->input->post('created_by'),
+                'status' => $this->input->post('status'),
             );
 
             return $this->db->insert('users', $data);
@@ -136,6 +152,31 @@
                 
                 return false;
             }
+        }
+
+
+        public function get_patientinfo($username){
+            
+            $query = $this->db->get_where('users', array('username' => $username, 'roles' => 'patient' ) );
+            return $query->result_array();
+
+            if($query->num_rows() > 0){
+                
+                return true;
+            }
+            else{
+                
+                return false;
+            }
+        }
+
+        public function updatepassword($username){
+
+            $data = array(
+                "password" => $this->input->post('password'),
+            );
+            $this->db->where('username', $username);
+            return $this->db->update('users' , $data);
         }
 
        

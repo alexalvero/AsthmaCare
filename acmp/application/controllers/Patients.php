@@ -1,13 +1,13 @@
 <?php
     class Patients extends CI_Controller{
         public function index(){
-            
-              
-
-            
+            $username = $this->session->userdata('username');
+            $data['username'] = $this->session->userdata('username');
+            $data['schedule'] = $this->schedule_model->schedule_user3($username);
+            $data['action'] = $this->action_model->viewAP_patient($username);
 
             $this->load->view('templates/patients/header-patient');
-            $this->load->view('patients/index');
+            $this->load->view('patients/index', $data);
             $this->load->view('templates/patients/footer-patient');
         }
 
@@ -27,8 +27,11 @@
 
         public function schedule(){
 
+            
             $username = $this->session->userdata('username');
+            $schedule1 =$this->schedule_model->schedule_user2($username);
             $data['schedule'] = $this->schedule_model->schedule_user($username);
+            $data['schedule1'] = $this->schedule_model->schedule_user2($username);
             $data['username'] = $this->session->userdata('username');
             $data['info'] = $this->schedule_model->getinfo();
 
@@ -96,5 +99,43 @@
             $this->schedule_model->update_schedule();
             redirect(base_url().patients);       
 
+        }
+
+        public function account(){
+
+            $username = $this->session->userdata('username');
+            $data['username'] = $this->session->userdata('username');
+            $data['info'] = $this->user_model->get_patientinfo($username);
+
+            $this->load->view('templates/patients/header-patient');
+            $this->load->view('patients/account', $data);
+            $this->load->view('templates/patients/footer-patient');
+
+        }
+
+        public function updatepassword(){
+            
+            $username = $this->input->post('username');
+            $this->user_model->updatepassword($username);
+            redirect(base_url()."patients/account");
+        }
+
+        public function feedback(){
+
+            $username = $this->session->userdata('username');
+            $data['username'] = $this->session->userdata('username');
+            $data['info'] = $this->user_model->get_patientinfo($username);
+
+
+            $this->load->view('templates/patients/header-patient');
+            $this->load->view('patients/feedback', $data);
+            $this->load->view('templates/patients/footer-patient');
+
+        }
+
+        public function addfeed(){
+
+            $this->feedback_model->addfeed();
+            redirect(base_url()."patients");
         }
     }

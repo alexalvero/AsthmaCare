@@ -75,6 +75,34 @@
            
         }
 
+        public function schedule_user2($username){
+            $query = $this->db->get_where('schedule', array('created_for' =>$username, 'status' => "<p class='text-secondary'>Pending</p>"));
+            return $query->result_array();
+
+            if($query->num_rows() > 0){
+                
+                return true;
+            }
+            else{
+                
+                return false;
+            }
+        }//end schedule_user
+
+        public function schedule_user3($username){
+            $query = $this->db->get_where('schedule', array('created_for' =>$username, 'status' => "<p class='text-success'>Accepted</p>"));
+            return $query->result_array();
+
+            if($query->num_rows() > 0){
+                
+                return true;
+            }
+            else{
+                
+                return false;
+            }
+        }//end schedule_user
+
        
     }//end class
  

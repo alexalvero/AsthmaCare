@@ -20,7 +20,7 @@
 
 
     <tbody>
-        <?php foreach($schedule as $rows) :?>
+        <?php foreach($schedule1 as $rows) :?>
         <tr>
         <input type="hidden" name="id" value="<?php echo $rows["id"]?>">
         <td><?php echo $rows['created_at']?></td>
@@ -31,7 +31,7 @@
           <input type="hidden" name='fname' value="<?php echo $rows['firstname']?>">
           <input type="hidden" name='lname' value="<?php echo $rows['lastname']?>">
            <?php foreach($info as $info1): ?>
-            <input type="hidden" name='email' value="<?php echo $info1['email']?>">
+            <input type="hidden" name='email' value="<?php echo $info1['email']?>"> 
             <input type="hidden" name='first' value="<?php echo $info1['firstname']?>">
             <input type="hidden" name='last' value="<?php echo $info1['lastname']?>">
            <?php endforeach ;?>

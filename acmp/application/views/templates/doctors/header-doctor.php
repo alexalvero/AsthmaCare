@@ -34,7 +34,9 @@
           <a class="nav-link dropdown-toggle" href="<?php echo base_url(); ?>doctors/AP" id="navbarDropdownMenuLink3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action Plan </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink3">
           <a class="dropdown-item" href="<?php echo base_url(); ?>doctors/createAP">Create Action Plan</a>
-          <a class="dropdown-item" href="<?php echo base_url(); ?>doctors/viewAP">View Action Plan</a>
+          <a class="dropdown-item" href="<?php echo base_url(); ?>doctors/viewAP">View Active Action Plan</a>
+          <a class="dropdown-item" href="<?php echo base_url(); ?>doctors/history">History</a>
+          <a class="dropdown-item" href="<?php echo base_url(); ?>doctors/feedback">Feedback</a>
         </div>
         </li>
           <li class="nav-item dropdown">

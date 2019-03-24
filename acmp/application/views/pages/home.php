@@ -76,17 +76,16 @@
           <br>
         </address>
         <address>
-          <abbr title="Phone">Phone Number:</abbr>
-          (123) 456-7890
+          
           <br>
           <abbr title="Email">Email:</abbr>
-          <a href="mailto:#">name@example.com</a>
+          <a href="mailto:#">acmp.ust@gmail.com</a>
         </address>
       </div>
     </div>
     <!-- /.row -->
 
-  <h2>Blogs</h2>
+  <!-- <h2>Blogs</h2>
     <div class="row">
       <div class="col-md-4 mb-5">
         <div class="card h-100">
@@ -124,7 +123,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <!-- /.row -->
 
   </div>

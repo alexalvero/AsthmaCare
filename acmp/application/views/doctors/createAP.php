@@ -18,13 +18,13 @@
             <?php foreach ($patients as $rows) :?>
                 <tr>
                     <td class="uppercase"><?php echo $rows['firstname']?> <?php echo $rows['lastname']?></td>
-                    <td><button class="btn btn-success" data-target="#<?php echo $rows['username']?>" data-toggle='modal'>Create Action Plan</button></td>
+                    <td><button class="btn btn-success" data-target="#modal<?php echo $rows['id']?>" data-toggle='modal'>Create Action Plan</button></td>
                     </tr>
 
                     <!-- Modal -->
-                    <?php echo form_open('doctors/addAP');?>
+                    <?php echo form_open('doctors/addAP') ?>
                     <input type='hidden' name='id' value='<?php echo $rows['id']?>'>
-                        <div class="modal fade xl" id='<?php echo $rows['username']?>' tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal fade xl" id='modal<?php echo $rows['id']?>' tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                             <div class="modal-content">
                             <div class="modal-header">
@@ -54,15 +54,54 @@
                                         <div class="form-row">
                                             <div class="form-group col-md-4 text-success">
                                             
-                                            <input type="text" class="form-control text-success" name='greenmedicine' placeholder="Medicine">
+                                            <input type="text" class="form-control text-success" name='greenmedicine1' placeholder="Medicine">
                                             </div>
                                             <div class="form-group col-md-4 text-success">
                                             
-                                            <input type="number" class="form-control text-success" name='greenmuch' placeholder="How Much">
+                                            <input type="number" class="form-control text-success" name='greenmuch1' placeholder="How Much">
                                             </div>
                                             <div class="form-group col-md-4 text-success">
                                             
-                                            <input type="text" class="form-control text-success" name='greenwhen' placeholder="How Often/When">
+                                            <input type="text" class="form-control text-success" name='greenwhen1' placeholder="How Often/When">
+                                            </div>
+
+                                            <div class="form-group col-md-4 text-success">
+                                            
+                                            <input type="text" class="form-control text-success" name='greenmedicine2' placeholder="Medicine">
+                                            </div>
+                                            <div class="form-group col-md-4 text-success">
+                                            
+                                            <input type="number" class="form-control text-success" name='greenmuch2' placeholder="How Much">
+                                            </div>
+                                            <div class="form-group col-md-4 text-success">
+                                            
+                                            <input type="text" class="form-control text-success" name='greenwhen2' placeholder="How Often/When">
+                                            </div>
+
+                                            <div class="form-group col-md-4 text-success">
+                                            
+                                            <input type="text" class="form-control text-success" name='greenmedicine3' placeholder="Medicine">
+                                            </div>
+                                            <div class="form-group col-md-4 text-success">
+                                            
+                                            <input type="number" class="form-control text-success" name='greenmuch3' placeholder="How Much">
+                                            </div>
+                                            <div class="form-group col-md-4 text-success">
+                                            
+                                            <input type="text" class="form-control text-success" name='greenwhen3' placeholder="How Often/When">
+                                            </div>
+
+                                            <div class="form-group col-md-4 text-success">
+                                            
+                                            <input type="text" class="form-control text-success" name='greenmedicine4' placeholder="Medicine">
+                                            </div>
+                                            <div class="form-group col-md-4 text-success">
+                                            
+                                            <input type="number" class="form-control text-success" name='greenmuch4' placeholder="How Much">
+                                            </div>
+                                            <div class="form-group col-md-4 text-success">
+                                            
+                                            <input type="text" class="form-control text-success" name='greenwhen4' placeholder="How Often/When">
                                             </div>
                                         </div>
 </br></br>
@@ -76,15 +115,54 @@
                                         <div class="form-row">
                                             <div class="form-group col-md-4 text-warning">
                                             
-                                            <input type="text" class="form-control text-warning" name='yellowmedicine' placeholder="Medicine">
+                                            <input type="text" class="form-control text-warning" name='yellowmedicine1' placeholder="Medicine">
                                             </div>
                                             <div class="form-group col-md-4 text-warning">
                                             
-                                            <input type="number" class="form-control text-warning" name='yellowmuch' placeholder="How Much">
+                                            <input type="number" class="form-control text-warning" name='yellowmuch1' placeholder="How Much">
                                             </div>
                                             <div class="form-group col-md-4 text-warning">
                                             
-                                            <input type="text" class="form-control text-warning" name='yellowwhen' placeholder=" How Often/When">
+                                            <input type="text" class="form-control text-warning" name='yellowwhen1' placeholder=" How Often/When">
+                                            </div>
+
+                                            <div class="form-group col-md-4 text-warning">
+                                            
+                                            <input type="text" class="form-control text-warning" name='yellowmedicine2' placeholder="Medicine">
+                                            </div>
+                                            <div class="form-group col-md-4 text-warning">
+                                            
+                                            <input type="number" class="form-control text-warning" name='yellowmuch2' placeholder="How Much">
+                                            </div>
+                                            <div class="form-group col-md-4 text-warning">
+                                            
+                                            <input type="text" class="form-control text-warning" name='yellowwhen2' placeholder=" How Often/When">
+                                            </div>
+
+                                            <div class="form-group col-md-4 text-warning">
+                                            
+                                            <input type="text" class="form-control text-warning" name='yellowmedicine3' placeholder="Medicine">
+                                            </div>
+                                            <div class="form-group col-md-4 text-warning">
+                                            
+                                            <input type="number" class="form-control text-warning" name='yellowmuch3' placeholder="How Much">
+                                            </div>
+                                            <div class="form-group col-md-4 text-warning">
+                                            
+                                            <input type="text" class="form-control text-warning" name='yellowwhen3' placeholder=" How Often/When">
+                                            </div>
+
+                                            <div class="form-group col-md-4 text-warning">
+                                            
+                                            <input type="text" class="form-control text-warning" name='yellowmedicine4' placeholder="Medicine">
+                                            </div>
+                                            <div class="form-group col-md-4 text-warning">
+                                            
+                                            <input type="number" class="form-control text-warning" name='yellowmuch4' placeholder="How Much">
+                                            </div>
+                                            <div class="form-group col-md-4 text-warning">
+                                            
+                                            <input type="text" class="form-control text-warning" name='yellowwhen4' placeholder=" How Often/When">
                                             </div>
                                         </div>
 </br></br>
@@ -98,20 +176,59 @@
                                         <div class="form-row">
                                             <div class="form-group col-md-4 text-danger">
                                             
-                                            <input type="text" class="form-control text-danger" name='redmedicine' placeholder="Medicine">
+                                            <input type="text" class="form-control text-danger" name='redmedicine1' placeholder="Medicine">
                                             </div>
                                             <div class="form-group col-md-4 text-danger">
                                             
-                                            <input type="number" class="form-control text-danger" name='redmuch' placeholder="How Much">
+                                            <input type="number" class="form-control text-danger" name='redmuch1' placeholder="How Much">
                                             </div>
                                             <div class="form-group col-md-4 text-danger">
                                             
-                                            <input type="text" class="form-control text-danger" name='redwhen' placeholder=" How Often/When">
+                                            <input type="text" class="form-control text-danger" name='redwhen1' placeholder=" How Often/When">
+                                            </div>
+                                            
+                                            <div class="form-group col-md-4 text-danger">
+                                            
+                                            <input type="text" class="form-control text-danger" name='redmedicine2' placeholder="Medicine">
+                                            </div>
+                                            <div class="form-group col-md-4 text-danger">
+                                            
+                                            <input type="number" class="form-control text-danger" name='redmuch2' placeholder="How Much">
+                                            </div>
+                                            <div class="form-group col-md-4 text-danger">
+                                            
+                                            <input type="text" class="form-control text-danger" name='redwhen2' placeholder=" How Often/When">
+                                            </div>
+
+                                            <div class="form-group col-md-4 text-danger">
+                                            
+                                            <input type="text" class="form-control text-danger" name='redmedicine3' placeholder="Medicine">
+                                            </div>
+                                            <div class="form-group col-md-4 text-danger">
+                                            
+                                            <input type="number" class="form-control text-danger" name='redmuch3' placeholder="How Much">
+                                            </div>
+                                            <div class="form-group col-md-4 text-danger">
+                                            
+                                            <input type="text" class="form-control text-danger" name='redwhen3' placeholder=" How Often/When">
+                                            </div>
+
+                                            <div class="form-group col-md-4 text-danger">
+                                            
+                                            <input type="text" class="form-control text-danger" name='redmedicine4' placeholder="Medicine">
+                                            </div>
+                                            <div class="form-group col-md-4 text-danger">
+                                            
+                                            <input type="number" class="form-control text-danger" name='redmuch4' placeholder="How Much">
+                                            </div>
+                                            <div class="form-group col-md-4 text-danger">
+                                            
+                                            <input type="text" class="form-control text-danger" name='redwhen4' placeholder=" How Often/When">
                                             </div>
                                         </div>
                                         
                                         </br></br>
-                                        <input type="file" accepts=".png, .jpeg, .jpg" name="doctorsignature">
+          
                                         <input type="hidden" name="version" value='latest'>
                                         <input type="hidden"  name="namepatient" value="<?php echo $rows['firstname']?> <?php echo $rows['lastname']?>" >
                                         <input type="hidden"  name="created_for" value="<?php echo $rows['username']?>">
@@ -124,13 +241,13 @@
                                     </div>
 </div>
                             <div class="modal-footer">
-                                <button class="btn btn-warning">Create Action Plan</button>
+                                <button class="btn btn-warning" data-target='<?php echo $rows['id']?>preview'>Create Action Plan</button>
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                             </div>
                             </div>
                         </div>
                         </div>
-                        <?php echo form_close();?>
+                        <?php echo form_close(); ?>
               <!-- END Modal -->
               <script>
     $('#<?php echo $rows['id']?>').keyup(function(){

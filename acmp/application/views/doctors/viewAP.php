@@ -23,6 +23,14 @@
             <td><?php echo $row['id']?></td>
             <td><?php echo $row['namepatient']?></td>
             <td><button class="btn btn-Success" data-target="#modal<?php echo $row ['id']?>" data-toggle='modal'>View Action Plan</button></td>
+            <td><?php echo form_open('doctors/archiveAP')?>
+              
+              <input type="hidden" name="id" value="<?php echo $row['id']?>">
+              <input type="hidden" name="status" value="archive"> 
+
+            <button class="btn btn-danger">Archive</button>
+            <?php echo form_close() ;?>
+            </td>
 
 
 
@@ -59,15 +67,54 @@
                                         <div class="form-row">
                                             <div class="form-group col-md-4 text-success">
                                             
-                                            <input type="text" class="form-control text-success" name='greenmedicine' placeholder="Medicine" value = "<?php echo $row['greenmedicine']?>" disabled>
+                                            <input type="text" class="form-control text-success" name='greenmedicine1' placeholder="Medicine" value = "<?php echo $row['greenmedicine1']?>" disabled>
                                             </div>
                                             <div class="form-group col-md-4 text-success">
                                             
-                                            <input type="number" class="form-control text-success" name='greenmuch' placeholder="How Much" value = "<?php echo $row['greenmuch']?>" disabled>
+                                            <input type="number" class="form-control text-success" name='greenmuch1' placeholder="How Much" value = "<?php echo $row['greenmuch1']?>" disabled>
                                             </div>
                                             <div class="form-group col-md-4 text-success">
                                             
-                                            <input type="text" class="form-control text-success" name='greenwhen' placeholder="How Often/When" value = "<?php echo $row['greenwhen']?>" disabled>
+                                            <input type="text" class="form-control text-success" name='greenwhen1' placeholder="How Often/When" value = "<?php echo $row['greenwhen1']?>" disabled>
+                                            </div>
+
+                                            <div class="form-group col-md-4 text-success">
+                                            
+                                            <input type="text" class="form-control text-success" name='greenmedicine2' placeholder="Medicine" value = "<?php echo $row['greenmedicine2']?>" disabled>
+                                            </div>
+                                            <div class="form-group col-md-4 text-success">
+                                            
+                                            <input type="number" class="form-control text-success" name='greenmuch2' placeholder="How Much" value = "<?php echo $row['greenmuch2']?>" disabled>
+                                            </div>
+                                            <div class="form-group col-md-4 text-success">
+                                            
+                                            <input type="text" class="form-control text-success" name='greenwhen2' placeholder="How Often/When" value = "<?php echo $row['greenwhen2']?>" disabled>
+                                            </div>
+
+                                            <div class="form-group col-md-4 text-success">
+                                            
+                                            <input type="text" class="form-control text-success" name='greenmedicine3' placeholder="Medicine" value = "<?php echo $row['greenmedicine3']?>" disabled>
+                                            </div>
+                                            <div class="form-group col-md-4 text-success">
+                                            
+                                            <input type="number" class="form-control text-success" name='greenmuch3' placeholder="How Much" value = "<?php echo $row['greenmuch3']?>" disabled>
+                                            </div>
+                                            <div class="form-group col-md-4 text-success">
+                                            
+                                            <input type="text" class="form-control text-success" name='greenwhen3' placeholder="How Often/When" value = "<?php echo $row['greenwhen3']?>" disabled>
+                                            </div>
+
+                                            <div class="form-group col-md-4 text-success">
+                                            
+                                            <input type="text" class="form-control text-success" name='greenmedicine4' placeholder="Medicine" value = "<?php echo $row['greenmedicine4']?>" disabled>
+                                            </div>
+                                            <div class="form-group col-md-4 text-success">
+                                            
+                                            <input type="number" class="form-control text-success" name='greenmuch4' placeholder="How Much" value = "<?php echo $row['greenmuch4']?>" disabled>
+                                            </div>
+                                            <div class="form-group col-md-4 text-success">
+                                            
+                                            <input type="text" class="form-control text-success" name='greenwhen4' placeholder="How Often/When" value = "<?php echo $row['greenwhen4']?>" disabled>
                                             </div>
                                         </div>
 </br></br>
@@ -81,15 +128,54 @@
                                         <div class="form-row">
                                             <div class="form-group col-md-4 text-warning">
                                             
-                                            <input type="text" class="form-control text-warning" name='yellowmedicine' placeholder="Medicine" value = "<?php echo $row['yellowmedicine']?>" disabled>
+                                            <input type="text" class="form-control text-warning" name='yellowmedicine1' placeholder="Medicine" value = "<?php echo $row['yellowmedicine1']?>" disabled>
                                             </div>
                                             <div class="form-group col-md-4 text-warning">
                                             
-                                            <input type="number" class="form-control text-warning" name='yellowmuch' placeholder="How Much" value = "<?php echo $row['yellowmuch']?>" disabled>
+                                            <input type="number" class="form-control text-warning" name='yellowmuch1' placeholder="How Much" value = "<?php echo $row['yellowmuch1']?>" disabled>
                                             </div>
                                             <div class="form-group col-md-4 text-warning">
                                             
-                                            <input type="text" class="form-control text-warning" name='yellowwhen' placeholder=" How Often/When" value = "<?php echo $row['yellowwhen']?>" disabled>
+                                            <input type="text" class="form-control text-warning" name='yellowwhen1' placeholder=" How Often/When" value = "<?php echo $row['yellowwhen1']?>" disabled>
+                                            </div>
+
+                                            <div class="form-group col-md-4 text-warning">
+                                            
+                                            <input type="text" class="form-control text-warning" name='yellowmedicine2' placeholder="Medicine" value = "<?php echo $row['yellowmedicine2']?>" disabled>
+                                            </div>
+                                            <div class="form-group col-md-4 text-warning">
+                                            
+                                            <input type="number" class="form-control text-warning" name='yellowmuch2' placeholder="How Much" value = "<?php echo $row['yellowmuch2']?>" disabled>
+                                            </div>
+                                            <div class="form-group col-md-4 text-warning">
+                                            
+                                            <input type="text" class="form-control text-warning" name='yellowwhen2' placeholder=" How Often/When" value = "<?php echo $row['yellowwhen2']?>" disabled>
+                                            </div>
+
+                                            <div class="form-group col-md-4 text-warning">
+                                            
+                                            <input type="text" class="form-control text-warning" name='yellowmedicine3' placeholder="Medicine" value = "<?php echo $row['yellowmedicine3']?>" disabled>
+                                            </div>
+                                            <div class="form-group col-md-4 text-warning">
+                                            
+                                            <input type="number" class="form-control text-warning" name='yellowmuch3' placeholder="How Much" value = "<?php echo $row['yellowmuch3']?>" disabled>
+                                            </div>
+                                            <div class="form-group col-md-4 text-warning">
+                                            
+                                            <input type="text" class="form-control text-warning" name='yellowwhen3' placeholder=" How Often/When" value = "<?php echo $row['yellowwhen3']?>" disabled>
+                                            </div>
+
+                                            <div class="form-group col-md-4 text-warning">
+                                            
+                                            <input type="text" class="form-control text-warning" name='yellowmedicine4' placeholder="Medicine" value = "<?php echo $row['yellowmedicine4']?>" disabled>
+                                            </div>
+                                            <div class="form-group col-md-4 text-warning">
+                                            
+                                            <input type="number" class="form-control text-warning" name='yellowmuch4' placeholder="How Much" value = "<?php echo $row['yellowmuch4']?>" disabled>
+                                            </div>
+                                            <div class="form-group col-md-4 text-warning">
+                                            
+                                            <input type="text" class="form-control text-warning" name='yellowwhen4' placeholder=" How Often/When" value = "<?php echo $row['yellowwhen4']?>" disabled>
                                             </div>
                                         </div>
 </br></br>
@@ -103,15 +189,54 @@
                                         <div class="form-row">
                                             <div class="form-group col-md-4 text-danger">
                                             
-                                            <input type="text" class="form-control text-danger" name='redmedicine' placeholder="Medicine" value = "<?php echo $row['redmedicine']?>" disabled>
+                                            <input type="text" class="form-control text-danger" name='redmedicine1' placeholder="Medicine" value = "<?php echo $row['redmedicine1']?>" disabled>
                                             </div>
                                             <div class="form-group col-md-4 text-danger">
                                             
-                                            <input type="number" class="form-control text-danger" name='redmuch' placeholder="How Much" value = "<?php echo $row['redmuch']?>" disabled>
+                                            <input type="number" class="form-control text-danger" name='redmuch1' placeholder="How Much" value = "<?php echo $row['redmuch1']?>" disabled>
                                             </div>
                                             <div class="form-group col-md-4 text-danger">
                                             
-                                            <input type="text" class="form-control text-danger" name='redwhen' placeholder=" How Often/When" value = "<?php echo $row['redwhen']?>" disabled>
+                                            <input type="text" class="form-control text-danger" name='redwhen1' placeholder=" How Often/When" value = "<?php echo $row['redwhen1']?>" disabled>
+                                            </div>
+
+                                            <div class="form-group col-md-4 text-danger">
+                                            
+                                            <input type="text" class="form-control text-danger" name='redmedicine2' placeholder="Medicine" value = "<?php echo $row['redmedicine2']?>" disabled>
+                                            </div>
+                                            <div class="form-group col-md-4 text-danger">
+                                            
+                                            <input type="number" class="form-control text-danger" name='redmuch2' placeholder="How Much" value = "<?php echo $row['redmuch2']?>" disabled>
+                                            </div>
+                                            <div class="form-group col-md-4 text-danger">
+                                            
+                                            <input type="text" class="form-control text-danger" name='redwhen2' placeholder=" How Often/When" value = "<?php echo $row['redwhen2']?>" disabled>
+                                            </div>
+
+                                            <div class="form-group col-md-4 text-danger">
+                                            
+                                            <input type="text" class="form-control text-danger" name='redmedicine3' placeholder="Medicine" value = "<?php echo $row['redmedicine3']?>" disabled>
+                                            </div>
+                                            <div class="form-group col-md-4 text-danger">
+                                            
+                                            <input type="number" class="form-control text-danger" name='redmuch3' placeholder="How Much" value = "<?php echo $row['redmuch3']?>" disabled>
+                                            </div>
+                                            <div class="form-group col-md-4 text-danger">
+                                            
+                                            <input type="text" class="form-control text-danger" name='redwhen3' placeholder=" How Often/When" value = "<?php echo $row['redwhen3']?>" disabled>
+                                            </div>
+
+                                            <div class="form-group col-md-4 text-danger">
+                                            
+                                            <input type="text" class="form-control text-danger" name='redmedicine3' placeholder="Medicine" value = "<?php echo $row['redmedicine4']?>" disabled>
+                                            </div>
+                                            <div class="form-group col-md-4 text-danger">
+                                            
+                                            <input type="number" class="form-control text-danger" name='redmuch3' placeholder="How Much" value = "<?php echo $row['redmuch4']?>" disabled>
+                                            </div>
+                                            <div class="form-group col-md-4 text-danger">
+                                            
+                                            <input type="text" class="form-control text-danger" name='redwhen3' placeholder=" How Often/When" value = "<?php echo $row['redwhen4']?>" disabled>
                                             </div>
                                         </div>
                                         
@@ -121,7 +246,12 @@
                 </div>
       </div>
       <div class="modal-footer">
+        <?php echo form_open('doctors/print')?>
+            <input type="hidden" name="id" value='<?php echo $row['id']?>'>
+            <button class="btn btn-success">Print</button>
+        <?php echo form_close() ; ?> 
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        
       </div>
     </div>
   </div>

@@ -17,14 +17,14 @@
         <td><?php echo $user['id']?></td>
         <td class='uppercase'><?php echo $user['firstname']?> <?php echo $user['lastname']?></td>
         <td><?php echo $user['created_at']?></td>
-        <td><button class="btn btn-warning" data-target="#<?php echo $user ['username']?>" data-toggle='modal'>Edit</button></td>
+        <td><button class="btn btn-warning" data-target="#modal<?php echo $user ['id']?>" data-toggle='modal'>Edit</button></td>
        
       </tr>
 
       <!-- Modal -->
       <?php echo form_open('doctors/update'); ?>
       <input type="hidden" name="id" value="<?php echo $user["id"]?>">
-<div class="modal fade" id='<?php echo $user['username']?>' tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id='modal<?php echo $user['id']?>' tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
     <div class="modal-content">
       <div class="modal-header">

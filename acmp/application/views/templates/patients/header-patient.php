@@ -22,12 +22,18 @@
               <span class="sr-only"></span>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url(); ?>patients/schedule">My Schedule</a>
-          </li>
+          <li class='nav-item dropdown'>
+          <a class="nav-link dropdown-toggle" href="<?php echo base_url(); ?>patients/MySchedule" id="navbarDropdownMenuLink3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My Schedule</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink3">
+          <a class="dropdown-item" href="<?php echo base_url(); ?>patients/schedule">Manage Schedule</a>
+          <!-- <a class="dropdown-item" href="<?php echo base_url(); ?>patients/viewschedule">View My Schedule</a> -->
+        </div>
+        </li>
           <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url(); ?>patients/account">My Account</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url(); ?>patients/feedback">Feedback</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href='<?php echo base_url()?>pages/logout'>Logout</a>
