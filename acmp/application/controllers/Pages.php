@@ -160,7 +160,7 @@
                 $mailContent="<h1 class='uppercase'>Good Day $firstname $lastname!</h1>
                         <h4> Password Recovery </h4>
                             <h5>Your Username is : $username</h5>
-                            <h5>Your Username is : $password</h5>
+                            <h5>Your Password is : $password</h5>
                         <h6>You may now Login to Your Account using your Credentials!</h6>
                 ";
                 endforeach;

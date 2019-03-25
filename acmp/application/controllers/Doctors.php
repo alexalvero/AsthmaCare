@@ -325,4 +325,22 @@
             $this->load->view('templates/doctors/footer-doctor');
 
         }
+
+        public function account(){
+
+            $username = $this->session->userdata('username');
+            $data['username'] = $this->session->userdata('username');
+            $data['info'] = $this->user_model->get_doctorinfo($username);
+
+            $this->load->view('templates/doctors/header-doctor');
+            $this->load->view('doctors/account', $data);
+            $this->load->view('templates/doctors/footer-doctor');
+
+        }
+        public function updatepassword(){
+            
+            $username = $this->input->post('username');
+            $this->user_model->updatepassword($username);
+            redirect(base_url()."doctors/account");
+        }
     }

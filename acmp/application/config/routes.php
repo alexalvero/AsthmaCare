@@ -4,6 +4,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 $route['patients/account'] = 'patients/account';
 $route['patients/updatepassword'] = 'patients/updatepassword';
+$route['doctors/account'] ='doctors/account';
+$route['doctors/updatepassword'] ='doctors/updatepassword';
 $route['doctors/add'] ='doctors/add';
 $route['doctors/feedback'] ='doctors/feedback';
 $route['doctors/print'] ='doctors/print';
